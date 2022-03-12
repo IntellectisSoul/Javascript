@@ -1,0 +1,84 @@
+#playerMarker {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 18px;
+
+    background: linear-gradient(#e60203, #323be5);
+
+    position: absolute;
+    top: calc(320px*0.66 - 32px);
+}
+
+.lose {
+    opacity: 0;
+    transform: scale(3, 3);
+
+    animation: 0.5s lose;
+}
+
+@keyframes lose {
+    from {opacity: 1; transform: scale(1,1)} to {opacity: 0; transform: scale(3, 3);}
+}
+
+
+.letter {
+    background: #ffb351;
+    width: 20px;
+    height: 42px;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #8c0000;
+    position: absolute;
+    top: calc(320px*0.66);
+    padding-top: 15px;
+    animation: 0.5s letter-up;
+}
+
+@keyframes letter-up {
+    from {top: 400px} to {top: calc(320px*0.66)}
+}
+
+.letter-top {
+    border-left: 1px solid #8c0000;
+    border-top: 1px solid #8c0000;
+    width: 15px;
+    height: 15px;
+    transform: rotate(45deg);
+    position: absolute;
+    top: -8px;
+    left: 2px;
+    background-color: #ffb351;
+}
+
+.remove {
+    opacity: 0;
+
+    transition: opacity 0.5s;
+}
+
+#gameZone {
+    position: relative;
+    width: 640px;
+    height: 320px;
+    border: 1px solid black;
+
+    background: linear-gradient(#2cacff, white 66%, #00bd00 66%, green);
+
+    overflow: hidden;
+}
+
+#gameOverMessage {
+    color: red;
+    text-align: center;
+    position: absolute;
+    left: 220px;
+    top: 100px;
+
+    animation: 1.5s game-over;
+}
+
+@keyframes game-over {
+    from {transform: rotate(0) scale(0, 0)} to {transform: rotate(18.8rad) scale(1, 1)}
+}
